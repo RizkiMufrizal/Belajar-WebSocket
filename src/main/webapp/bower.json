@@ -1,0 +1,30 @@
+{
+  "name": "BelajarWebSocket",
+  "version": "0.0.1",
+  "homepage": "https://github.com/RizkiMufrizal/Belajar-WebSocket",
+  "authors": [
+    "Rizki Mufrizal <mufrizalrizki@gmail.com>"
+  ],
+  "description": "Belajar Web Socket",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "jquery": "~2.1.3",
+    "stomp-websocket": "~2.3.4",
+    "lodash": "~3.5.0",
+    "sockjs": "~0.3.4",
+    "bootstrap": "~3.3.2"
+  }
+}
