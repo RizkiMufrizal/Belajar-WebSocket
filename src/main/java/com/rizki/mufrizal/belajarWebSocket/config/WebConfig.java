@@ -18,10 +18,10 @@ import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.rizki.mufrizal.belajarWebSocket"})
 @Import(value = {WebSocketConfig.class})
-public class WebConfig extends WebMvcConfigurerAdapter{
+public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
-    public WebContentInterceptor webContentInterceptor(){
+    public WebContentInterceptor webContentInterceptor() {
         WebContentInterceptor contentInterceptor = new WebContentInterceptor();
         contentInterceptor.setCacheSeconds(0);
         contentInterceptor.setUseExpiresHeader(true);
@@ -31,7 +31,7 @@ public class WebConfig extends WebMvcConfigurerAdapter{
     }
 
     @Bean
-    public ServletContextTemplateResolver servletContextTemplateResolver(){
+    public ServletContextTemplateResolver servletContextTemplateResolver() {
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver();
         templateResolver.setPrefix("/pages/");
         templateResolver.setSuffix(".html");
@@ -41,21 +41,21 @@ public class WebConfig extends WebMvcConfigurerAdapter{
     }
 
     @Bean
-    public SpringTemplateEngine springTemplateEngine(){
+    public SpringTemplateEngine springTemplateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(servletContextTemplateResolver());
         return templateEngine;
     }
 
     @Bean
-    public ThymeleafViewResolver thymeleafViewResolver(){
+    public ThymeleafViewResolver thymeleafViewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(springTemplateEngine());
         return viewResolver;
     }
 
     @Override
-    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer defaultServletHandlerConfigurer){
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer defaultServletHandlerConfigurer) {
         defaultServletHandlerConfigurer.enable();
     }
 
@@ -66,6 +66,6 @@ public class WebConfig extends WebMvcConfigurerAdapter{
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/lib/**").addResourceLocations("/lib/");
+        registry.addResourceHandler("/**").addResourceLocations("/");
     }
 }

@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Created by rizki on 10/03/15.
  */
-public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
+public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
@@ -20,22 +20,22 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] {
-            WebSocketConfig.class
+        return new Class<?>[]{
+                WebSocketConfig.class
         };
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class<?>[]{
-            WebConfig.class
+                WebConfig.class
         };
     }
 
     @Override
     protected String[] getServletMappings() {
         return new String[]{
-            "/"
+                "/"
         };
     }
 
@@ -44,7 +44,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding(StandardCharsets.UTF_8.name());
         return new Filter[]{
-            characterEncodingFilter
+                characterEncodingFilter
         };
     }
 }
