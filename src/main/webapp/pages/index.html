@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8"/>
+        <title>Belajar Web Socket</title>
+
+        <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+        <!-- endbower -->
+
+    </head>
+    <body ng-app="BelajarWebSocket">
+
+        <div class="container" ng-controller="BelajarWebSocketController as belajarWebSocket">
+            <form ng-submit="belajarWebSocket.addMessage()" name="messageForm">
+                <input class="form-control" type="text" ng-model="belajarWebSocket.message" />
+                <button class="btn btn-default" ng-disabled="belajarWebSocket.message.length > belajarWebSocket.max || belajarWebSocket.message === 0">Send</button>
+            </form>
+            <hr />
+            <p ng-repeat="b in belajarWebSocket.messages">
+                <span>{{b.message}}</span>
+            </p>
+        </div>
+
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/stomp-websocket/lib/stomp.min.js"></script>
+        <script src="../bower_components/lodash/lodash.js"></script>
+        <script src="../bower_components/sockjs/sockjs.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+
+        <script src="../app/scripts/App.js"></script>
+        <script src="../app/scripts/services/AppService.js"></script>
+        <script src="../app/scripts/controllers/AppController.js"></script>
+
+    </body>
+</html>
