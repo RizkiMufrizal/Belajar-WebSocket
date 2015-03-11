@@ -36,10 +36,7 @@ Cara menggunakan :
 
   `mvn clean jetty:run --debug`
 
-* buka browser dan hit url berikut :
-
-  `http://localhost:8080/index`
-
+* buka browser dan hit url berikut :`http://localhost:8080/index`
 * Untuk menguji Web Socket buka 2 browser dan lakukan chatting
 * Log aplikasi terdapat di ${ROOT PROJECT}/log/LogAplikasi.log
 * Untuk Melihat Log JavaScript silahkan buka web console pada browser
